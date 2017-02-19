@@ -1,5 +1,5 @@
 //
-//  Movie.swift
+//  likeMovie.swift
 //  MovieAdmin
 //
 //  Created by Fèlix Arribas on 30/1/17.
@@ -11,6 +11,7 @@ import SwiftyJSON
 
 class Movie {
     
+    var id: String?
     var title: String?
     var summary: String?
     var price: String?
@@ -24,6 +25,7 @@ class Movie {
     
     init(json: JSON) {
         
+        self.id = json["id"]["attributes"]["im:id"].stringValue
         self.title = json["title"]["label"].stringValue
         self.summary = json["summary"]["label"].stringValue
         self.price = json["im:price"]["label"].stringValue
@@ -43,5 +45,18 @@ class Movie {
         let height = json["im:image"][0]["attributes"]["height"].stringValue
         let heightString = height + "x" + height
         self.imageUrl = imImageLabel.replacingOccurrences(of: heightString, with: "300x300")
+    }
+    
+    init(likeMovie: LikeMovie) {
+        self.id = likeMovie.id
+        self.title = likeMovie.title
+        self.summary = likeMovie.summary
+        self.price = likeMovie.price
+        self.duration = likeMovie.duration
+        self.director = likeMovie.director
+        self.category = likeMovie.category
+        self.categoryId = likeMovie.category
+        self.releaseDate = likeMovie.releaseDate
+        self.imageUrl = likeMovie.imageUrl
     }
 }

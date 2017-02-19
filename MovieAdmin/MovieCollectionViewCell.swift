@@ -12,8 +12,15 @@ import Kingfisher
 class MovieCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var movieImageView: UIImageView!
+    @IBOutlet weak var likeImageView: UIImageView!
     
     func initCell(movie: Movie) {
+        self.movieImageView.kf.setImage(with: URL(string: movie.imageUrl!))
+        
+        self.likeImageView.isHidden = !LikeController.sharedInstance.containsMovieWith(identifier: movie.id!)
+    }
+    
+    func initCell(movie: LikeMovie) {
         self.movieImageView.kf.setImage(with: URL(string: movie.imageUrl!))
     }
     

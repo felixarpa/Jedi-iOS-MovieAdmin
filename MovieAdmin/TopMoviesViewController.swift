@@ -25,6 +25,11 @@ class TopMoviesViewController: UIViewController {
         self.getMoviesWith(offset: 0)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.movies = [Movie]()
+        self.getMoviesWith(offset: 0)
+    }
+    
     func getMoviesWith(offset: Int) {
         self.needToLoad = false
         NetworkController.getTopMovies(offset: offset, genre: listGenre) {
@@ -46,6 +51,10 @@ class TopMoviesViewController: UIViewController {
         setCellWidth()
     }
 
+    func lastClickedMovie() -> Movie {
+        let lastClickedIndex = moviesCollectionView.indexPathsForSelectedItems?[0]
+        return movies[lastClickedIndex!.row]
+    }
 }
 
 extension TopMoviesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -92,9 +101,8 @@ extension TopMoviesViewController: UICollectionViewDataSource, UICollectionViewD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToMovieDetail" {
-            let lastClickedIndex = moviesCollectionView.indexPathsForSelectedItems?[0]
             let movieDetailViewController = segue.destination as! MovieDetailViewController
-            movieDetailViewController.movie = movies[lastClickedIndex!.row]
+            movieDetailViewController.movie = lastClickedMovie()
         }
     }
     

@@ -27,6 +27,13 @@
 		E058E0BF1E4387F300AA66EE /* TopMoviesHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058E0BE1E4387F300AA66EE /* TopMoviesHeader.swift */; };
 		E058E0C11E4392A000AA66EE /* CustomSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058E0C01E4392A000AA66EE /* CustomSegment.swift */; };
 		E0E4F2B61E42262200C9FECB /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E4F2B51E42262200C9FECB /* CustomView.swift */; };
+		E0E859DC1E59B1900043597A /* LikeMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E859DB1E59B1900043597A /* LikeMovie.swift */; };
+		E0E859DE1E59B3480043597A /* LikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E859DD1E59B3480043597A /* LikeController.swift */; };
+		E0E859E11E59B3B90043597A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E859DF1E59B3B90043597A /* Realm.framework */; };
+		E0E859E21E59B3B90043597A /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E0E859DF1E59B3B90043597A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E0E859E31E59B3B90043597A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E859E01E59B3B90043597A /* RealmSwift.framework */; };
+		E0E859E41E59B3B90043597A /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E0E859E01E59B3B90043597A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E0E859E61E59DEE10043597A /* MyMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E859E51E59DEE10043597A /* MyMoviesViewController.swift */; };
 		E0F1180A1E40F4AE008AB2B5 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F118091E40F4AE008AB2B5 /* MovieDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +44,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E0E859E21E59B3B90043597A /* Realm.framework in CopyFiles */,
+				E0E859E41E59B3B90043597A /* RealmSwift.framework in CopyFiles */,
 				E014BEC21E3F780F002DF850 /* Alamofire.framework in CopyFiles */,
 				E014BEC31E3F780F002DF850 /* Kingfisher.framework in CopyFiles */,
 				E014BEC41E3F780F002DF850 /* SwiftyJSON.framework in CopyFiles */,
@@ -65,6 +74,11 @@
 		E058E0BE1E4387F300AA66EE /* TopMoviesHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopMoviesHeader.swift; path = ../TopMoviesHeader.swift; sourceTree = "<group>"; };
 		E058E0C01E4392A000AA66EE /* CustomSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegment.swift; sourceTree = "<group>"; };
 		E0E4F2B51E42262200C9FECB /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		E0E859DB1E59B1900043597A /* LikeMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeMovie.swift; sourceTree = "<group>"; };
+		E0E859DD1E59B3480043597A /* LikeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeController.swift; sourceTree = "<group>"; };
+		E0E859DF1E59B3B90043597A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		E0E859E01E59B3B90043597A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		E0E859E51E59DEE10043597A /* MyMoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMoviesViewController.swift; sourceTree = "<group>"; };
 		E0F118091E40F4AE008AB2B5 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E859E11E59B3B90043597A /* Realm.framework in Frameworks */,
+				E0E859E31E59B3B90043597A /* RealmSwift.framework in Frameworks */,
 				E014BEBE1E3F7793002DF850 /* SwiftyJSON.framework in Frameworks */,
 				E014BEC01E3F779F002DF850 /* Alamofire.framework in Frameworks */,
 				E014BEBD1E3F7793002DF850 /* Kingfisher.framework in Frameworks */,
@@ -112,12 +128,15 @@
 				E014BEAE1E3F74FF002DF850 /* LaunchScreen.storyboard */,
 				E014BEB11E3F74FF002DF850 /* Info.plist */,
 				E014BEC81E3F85B7002DF850 /* TopMoviesViewController.swift */,
+				E0E859E51E59DEE10043597A /* MyMoviesViewController.swift */,
 				E014BECA1E3F86B3002DF850 /* MovieCollectionViewCell.swift */,
 				E014BECC1E3F8938002DF850 /* NetworkController.swift */,
 				E014BECE1E3F90D0002DF850 /* Movie.swift */,
 				E0F118091E40F4AE008AB2B5 /* MovieDetailViewController.swift */,
 				E0E4F2B51E42262200C9FECB /* CustomView.swift */,
 				E058E0C01E4392A000AA66EE /* CustomSegment.swift */,
+				E0E859DB1E59B1900043597A /* LikeMovie.swift */,
+				E0E859DD1E59B3480043597A /* LikeController.swift */,
 			);
 			path = MovieAdmin;
 			sourceTree = "<group>";
@@ -125,6 +144,8 @@
 		E014BEB81E3F777D002DF850 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E0E859DF1E59B3B90043597A /* Realm.framework */,
+				E0E859E01E59B3B90043597A /* RealmSwift.framework */,
 				E014BEBF1E3F779F002DF850 /* Alamofire.framework */,
 				E014BEBA1E3F7793002DF850 /* Kingfisher.framework */,
 				E014BEBB1E3F7793002DF850 /* SwiftyJSON.framework */,
@@ -219,8 +240,11 @@
 				E058E0BF1E4387F300AA66EE /* TopMoviesHeader.swift in Sources */,
 				E0E4F2B61E42262200C9FECB /* CustomView.swift in Sources */,
 				E014BEA81E3F74FF002DF850 /* ViewController.swift in Sources */,
+				E0E859DE1E59B3480043597A /* LikeController.swift in Sources */,
+				E0E859DC1E59B1900043597A /* LikeMovie.swift in Sources */,
 				E014BECF1E3F90D0002DF850 /* Movie.swift in Sources */,
 				E014BEA61E3F74FF002DF850 /* AppDelegate.swift in Sources */,
+				E0E859E61E59DEE10043597A /* MyMoviesViewController.swift in Sources */,
 				E058E0C11E4392A000AA66EE /* CustomSegment.swift in Sources */,
 				E0F1180A1E40F4AE008AB2B5 /* MovieDetailViewController.swift in Sources */,
 				E014BEC91E3F85B7002DF850 /* TopMoviesViewController.swift in Sources */,

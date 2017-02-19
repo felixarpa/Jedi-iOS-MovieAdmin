@@ -20,6 +20,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var bigLikeImageView: UIImageView!
+    @IBOutlet weak var likeImageView: UIImageView!
     
     var scaleIndex: Int = 0
     var scales: [CGFloat] = [ 1.4, 1.0, 1.1 ]
@@ -45,6 +46,8 @@ class MovieDetailViewController: UIViewController {
         
         self.summaryLabel.text = movie!.summary!
         
+        self.likeImageView.isHidden = !(LikeController.sharedInstance.containsMovieWith(identifier: movie!.id!))
+        
     }
     
     func configureDoubeTap() {
@@ -61,9 +64,14 @@ class MovieDetailViewController: UIViewController {
     }
     
     func endAnimation() {
-        UIView.animate(withDuration: 0.5) {
-            self.bigLikeImageView.alpha = 0.0
-        }
+        UIView.animate(
+            withDuration: 0.5,
+            animations: {
+                self.bigLikeImageView.alpha = 0.0
+        },  completion: {
+            value in
+            self.likeImageView.isHidden = LikeController.sharedInstance.bigLikeTo(movie: self.movie!)
+        })
         
     }
     
